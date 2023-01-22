@@ -44,7 +44,7 @@ events: outcome.executionOutcome.outcome.logs.map(
 (log: string): EventLogData => {
 const [_, probablyEvent] = log.match(/^EVENT_JSON:(.*)$/) ?? []
 try {
-console.log(JSON.parse(probablyEvent));
+//console.log(JSON.parse(probablyEvent));
 
 return JSON.parse(probablyEvent)
 } catch (e) {
@@ -52,7 +52,7 @@ return
 }
 }
 )
-.filter(event => event !== undefined)
+.filter(event => event !== undefined && event.event === "ft_mint" && event.standard === 'nep141')
 }))
 .filter(relevantOutcome =>
   relevantOutcome.events.some(
@@ -61,11 +61,13 @@ return
 );
 outcome.forEach(element => {
   element.events.forEach(element => {
-    console.log(JSON.stringify(element))
+    console.log(element.data)
     
   });
   
 });
+
+
 
 
 
