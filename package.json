@@ -10,8 +10,9 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
-    "near-lake-framework": "^1.0.3",
-    "socket.io": "^4.5.4"
+    "near-lake-framework": "^1.0.6",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4"
   },
   "devDependencies": {
     "typescript": "^4.6.4"
